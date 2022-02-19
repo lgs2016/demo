@@ -3,7 +3,7 @@ package com.ef.springboot.mapper;
 import com.ef.springboot.model.Student;
 import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
+//@Mapper
 public interface StudentMapper {
     int deleteByPrimaryKey(Integer id);
 
