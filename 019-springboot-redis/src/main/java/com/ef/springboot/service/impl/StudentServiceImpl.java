@@ -1,9 +1,11 @@
 package com.ef.springboot.service.impl;
 
-import com.ef.springboot.service.StudentService.StudentService;
+import com.ef.springboot.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
@@ -14,5 +16,12 @@ public class StudentServiceImpl implements StudentService {
 
         redisTemplate.opsForValue().set(key,value);
 
+    }
+
+    @Override
+    public String get(String key) {
+
+        String count=(String) redisTemplate.opsForValue().get(key);
+        return count;
     }
 }
